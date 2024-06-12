@@ -8,7 +8,7 @@ function App() {
   let [users, setUsers] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://goals-game-express-app.onrender.com/users")
       .then((response) => response.json())
       .then((data) => setUsers(data))
       .catch((error) => console.error("Error fetching data:", error));

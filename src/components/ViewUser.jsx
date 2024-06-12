@@ -6,7 +6,7 @@ function ViewUser() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${id}/goals`)
+    fetch(`https://goals-game-express-app.onrender.com/users/${id}/goals`)
       .then((response) => response.json())
       .then((data) => setUser(data))
       .catch((error) => console.error("Error fetching data:", error));
