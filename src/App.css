@@ -19,9 +19,10 @@
 }
 
 button.pastel-green {
-  background-color: rgb(149, 221, 149);
+  background-color: rgb(130, 73, 253);
   border: none;
   padding: 2px 20px;
+  color: white;
 }
 
 .points {
@@ -37,6 +38,17 @@ button.pastel-green {
 }
 
 .description-section {
+}
+
+.button-section {
   display: flex;
   flex-direction: row-reverse;
+}
+
+.button-section button {
+  margin-left: 10px;
+  border: none;
+  padding: 2px 10px;
+  background-color: rgb(149, 221, 149);
+  color: white;
 }

@@ -37,7 +37,7 @@ function ViewUser() {
                   <div className="description-section">
                     <p>{goal.description}</p>
                   </div>
-                  <div className="description-section">
+                  <div className="button-section">
                     <button>Complete</button>
                   </div>
                 </div>
