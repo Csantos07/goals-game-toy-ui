@@ -13,26 +13,36 @@ function ViewUser() {
   }, [id]);
 
   return (
-    <div className="container my-5">
+    <div className="container px-2 py-4">
       {user && (
-        <div className="card shadow">
-          <div className="card-body">
-            <h2 className="card-title">
+        <div>
+          <section className="flex-row-two-columns px-4 mb-3">
+            <h1>
               {user.first_name} {user.last_name}
-            </h2>
-            {user.goals && (
-              <ul className="list-group list-group-flush">
-                {user.goals.map((goal) => (
-                  <li
-                    key={goal.id}
-                    className="list-group-item text-start" // Use text-start for left alignment
-                  >
-                    {goal.title}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
+            </h1>
+            <section className="flex-column">
+              <button className="pastel-green">Assign</button>
+              <p className="points">{user.points}</p>
+            </section>
+          </section>
+
+          {user.goals &&
+            user.goals.map((goal) => (
+              <div key={goal.id} className="card p-3 mb-4">
+                <div className="inner-card">
+                  <div className="top-row">
+                    <p>{goal.title}</p>
+                    <p>{goal.points}</p>
+                  </div>
+                  <div className="description-section">
+                    <p>{goal.description}</p>
+                  </div>
+                  <div className="description-section">
+                    <button>Complete</button>
+                  </div>
+                </div>
+              </div>
+            ))}
         </div>
       )}
     </div>

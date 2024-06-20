@@ -1,22 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import ListUsers from "./ListUsers";
 
 function Home({ users }) {
+  if (users === null) {
+    return (
+      <div className="container my-5">
+        <p>No users found.</p>
+      </div>
+    );
+  }
+
   return (
-    <div className="container my-5">
-      <h2 className="mb-4">Users</h2>
-      {users &&
-        users.map((user) => (
-          <Link to={`/user/${user.id}`} key={user.id} className="card mb-3 text-decoration-none">
-            <div className="card-body">
-              <h5 className="card-title">
-                {user.first_name} {user.last_name}
-              </h5>
-              <p className="card-text">{user.email}</p>
-              <span>Points: {user.points}</span>
-            </div>
-          </Link>
-        ))}
+    <div className="container px-5 py-5">
+      <h2 className="pb-2">Users</h2>
+
+      <ListUsers users={users} />
     </div>
   );
 }
